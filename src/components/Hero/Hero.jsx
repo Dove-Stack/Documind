@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import React from "react";
 
 const Hero = () => {
   return (
@@ -40,9 +39,7 @@ const Hero = () => {
             <div className="w-3 h-3 rounded-full bg-green-400"></div>
           </div>
 
-          {/* Chat Body */}
           <div className="bg-slate-50/50 px-6 py-6 sm:px-8 sm:py-6 flex flex-col gap-4">
-            {/* User Message */}
             <div className="flex items-center gap-4">
               <div className="p-2.5 rounded-full bg-blue-100 flex items-center justify-center">
                 <Icon
@@ -56,7 +53,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* AI Message */}
             <div className="flex items-start gap-4">
               <div className="bg-brand-navy text-white shadow-md px-4 py-3 rounded-lg w-full text-sm sm:text-base leading-relaxed">
                 Based on the document, here are the 5 key findings: 1. AI

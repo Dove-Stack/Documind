@@ -43,6 +43,8 @@ import axios from "axios";
 // } from "@heroicons/react/24/outline";
 
 import { Icon } from "@iconify/react";
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   const [file, setFile] = useState(null);
@@ -108,74 +110,10 @@ function App() {
   return (
     <div className="min-h-screen bg-page-gradient text-slate-900">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="bg-brand-navy p-1.5 rounded-lg text-white">
-              <Icon icon="mage:light-bulb" className="w-6 h-6" />
-            </div>
-            <span className="bg-linear-to-r from-brand-navy to-brand-blue bg-clip-text text-transparent text-xl font-bold tracking-tight">
-              DocuMind
-            </span>
-          </div>
-
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-dull-text">
-            <a href="#" className="hover:text-brand-navy transition-colors">
-              Features
-            </a>
-            <a href="#" className="hover:text-brand-navy transition-colors">
-              How It Works
-            </a>
-            <a href="#" className="hover:text-brand-navy transition-colors">
-              Demo
-            </a>
-            <a href="#" className="hover:text-brand-navy transition-colors">
-              Testimonials
-            </a>
-
-            <button className="text-brand-navy border border-brand-navy px-8 py-2.5 rounded-xl font-semibold hover:scale-105 transition-transform">
-              Login
-            </button>
-
-            <button className="bg-brand-navy text-white px-5 py-2.5 rounded-xl font-semibold hover:scale-105 transition-transform">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </nav>
-
+      <Navbar />
       {/* Hero Section */}
-      <header className="pt-16 pb-12 px-4 text-center relative overflow-hidden">
-        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-page-gradient border border-sparkle-border text-brand-navy text-xs font-bold mb-6">
-          <Icon icon="heroicons:sparkles-20-solid" className="w-5 h-5" />
-          AI-Powered Research Assistant
-        </div>
 
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 p-3 bg-linear-to-b from-brand-navy to-brand-blue bg-clip-text text-transparent">
-          Transform Your Documents <br />
-          Into Actionable Insights
-        </h1>
-
-        <p className="max-w-2xl mx-auto text-lg text-dull-text mb-10 leading-relaxed">
-          Upload any document or text and let DocuMind's advanced AI analyze,
-          summarize, and answer your questions instantly. Research made simple.
-        </p>
-
-        <div className="flex flex-col items-center sm:flex-row gap-5 justify-center">
-          <button className="bg-brand-navy inline-flex items-center py-4 px-8 text-white rounded-md">
-            <Icon
-              icon="heroicons-outline:cloud-download"
-              className="w-5 h-5 mr-2"
-            />
-            Start Analyzing Now
-          </button>
-
-          <button className="bg-white inline-flex items-center py-4 px-8 rounded-md text-dull-text outline outline-dull-text">
-            <Icon icon="octicon:play-16" className="w-5 h-5 mr-2" />
-            Watch Demo
-          </button>
-        </div>
-      </header>
+      <Hero />
 
       <div className="relative max-w-5xl mx-auto mt-16 py-7">
         <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">

@@ -114,7 +114,7 @@ function App() {
 
       <Hero />
 
-      <TrustedBy />
+      <TrustedBy /> 
     </div>
   );
 }

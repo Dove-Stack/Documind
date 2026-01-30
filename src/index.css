@@ -7,6 +7,7 @@
   --color-secondary: #1f2937;
   --color-sparkle-border: #8bbef9;
   --color-dull-text: #3a3541;
+  --color-slate-text: #3a3541ab;
   --color-mockup-bg: #d9d9d9;
   --color-mockup-user: #eff6ff;
   --bg-brand-gradient: linear-gradient(
@@ -32,6 +33,10 @@
 @layer utilities {
   .bg-brand-gradient {
     background: linear-gradient(to right, #0f1359, #2029bf);
+  }
+
+  .color{
+    color: #3a3541ab;
   }
 
   .bg-page-gradient {

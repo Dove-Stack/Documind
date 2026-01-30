@@ -46,6 +46,7 @@ import { Icon } from "@iconify/react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import TrustedBy from "./components/TrustedBy/TrustedBy";
+import Feature from "./components/Feature/Feature";
 
 function App() {
   const [file, setFile] = useState(null);
@@ -109,12 +110,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-page-gradient text-slate-900">
+    <div className="min-h-screen  text-slate-900">
       <Navbar />
 
       <Hero />
 
-      <TrustedBy /> 
+      <TrustedBy />
+
+      <Feature />
     </div>
   );
 }

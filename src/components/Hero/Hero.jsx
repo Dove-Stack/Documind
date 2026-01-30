@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 
 const Hero = () => {
   return (
-    <>
+    <div className="bg-page-gradient">
       <header className="pt-16 pb-12 px-4 text-center relative overflow-hidden">
         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-page-gradient border border-sparkle-border text-brand-navy text-xs font-bold mb-6">
           <Icon icon="heroicons:sparkles-20-solid" className="w-5 h-5" />
@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

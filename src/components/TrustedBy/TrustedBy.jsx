@@ -10,10 +10,18 @@ import {
   UniLorin,
 } from "../../assets/assets";
 
+const brands = [
+  { src: DHL, alt: "DHL" },
+  { src: MoniePoint, alt: "MoniePoint" },
+  { src: TechRadar, alt: "TechRadar" },
+  { src: Chowdeck, alt: "Chowdeck" },
+  { src: SP, alt: "S&P" },
+];
+
 const TrustedBy = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-20">
-      <h1 className="text-3xl font-extrabold tracking-tight mb-6 p-3 text-brand-gradient">
+    <div className="flex flex-col items-center justify-center mt-20 mb-8">
+      <h1 className="text-2xl font-medium tracking-tight mb-6 p-3 text-brand-gradient">
         Trusted by students and professionals at
       </h1>
 
@@ -52,12 +60,20 @@ const TrustedBy = () => {
         </div>
       </div>
 
-      <div>
-        <img src={DHL} alt="" />
-        <img src={MoniePoint} alt="" />
-        <img src={TechRadar} alt="" />
-        <img src={Chowdeck} alt="" />
-        <img src={SP} alt="" />
+      <div className="flex flex-row mt-16  justify-center md:justify-start gap-3">
+        <div className="flex -space-x-4">
+          {brands.map((brand, brndKy) => (
+            <img
+              key={brndKy}
+              src={brand.src}
+              alt={brand.alt}
+              className="w-9 h-9 md:w-11 md:h-11 object-contain border-2 border-white rounded-full bg-white shadow-sm"
+            />
+          ))}
+        </div>
+        <p className="flex items-center justify-center text-slate-text font-semibold">
+          Professionals
+        </p>
       </div>
     </div>
   );

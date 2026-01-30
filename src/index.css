@@ -6,9 +6,9 @@
   --color-brand-navy: #0f1359;
   --color-secondary: #1f2937;
   --color-sparkle-border: #8bbef9;
-  --color-dull-text: #3A3541;
-  --color-mockup-bg: #D9D9D9;
-  --color-mockup-user:#EFF6FF;
+  --color-dull-text: #3a3541;
+  --color-mockup-bg: #d9d9d9;
+  --color-mockup-user: #eff6ff;
   --bg-brand-gradient: linear-gradient(
     to right,
     var(--color-brand-navy),
@@ -35,7 +35,18 @@
   }
 
   .bg-page-gradient {
-    background: linear-gradient(to bottom, #EFF6FF, #FFFFFF, #EEF2FF)
+    background: linear-gradient(to bottom, #eff6ff, #ffffff, #eef2ff);
+  }
+  .text-brand-gradient {
+    background: linear-gradient(
+      to bottom,
+      var(--color-brand-navy),
+      var(--color-brand-blue)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* for non-webkit browsers */
+    color: transparent;
   }
 }
 

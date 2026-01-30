@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 
 const Hero = () => {
   return (
-    <div className="bg-page-gradient">
+    <div className="">
       <header className="pt-16 pb-12 px-4 text-center relative overflow-hidden">
         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-page-gradient border border-sparkle-border text-brand-navy text-xs font-bold mb-6">
           <Icon icon="heroicons:sparkles-20-solid" className="w-5 h-5" />
@@ -39,8 +39,8 @@ const Hero = () => {
             <div className="w-3 h-3 rounded-full bg-green-400"></div>
           </div>
 
-          <div className="bg-slate-50/50 px-6 py-6 sm:px-8 sm:py-6 flex flex-col gap-4">
-            <div className="flex items-center gap-4">
+          <div className=" px-6 py-18 sm:px-8 sm:py-6 flex flex-col gap-4">
+            <div className="flex items-center gap-4 ">
               <div className="p-2.5 rounded-full bg-blue-100 flex items-center justify-center">
                 <Icon
                   icon="icon-park-outline:user"
@@ -48,7 +48,7 @@ const Hero = () => {
                 />
               </div>
 
-              <div className="bg-slate-200 text-dull-text px-4 py-3 rounded-lg w-full text-sm sm:text-base">
+              <div className="bg-slate-100 text-dull-text px-4 py-3 rounded-lg w-full text-sm sm:text-base">
                 Can you summarize the key findings from this research paper?
               </div>
             </div>

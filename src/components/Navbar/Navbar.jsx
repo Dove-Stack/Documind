@@ -1,15 +1,12 @@
 import { Icon } from "@iconify/react";
 import React from "react";
 
-
-
-
 const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="bg-brand-navy p-1.5 rounded-lg text-white">
+          <div className="bg-linear-to-b from-brand-navy to-brand-blue p-2 rounded-lg text-white">
             <Icon icon="mage:light-bulb" className="w-6 h-6" />
           </div>
           <span className="bg-linear-to-r from-brand-navy to-brand-blue bg-clip-text text-transparent text-xl font-bold tracking-tight">

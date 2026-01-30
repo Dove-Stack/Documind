@@ -20,8 +20,8 @@ const brands = [
 
 const TrustedBy = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-20 mb-8">
-      <h1 className="text-2xl font-medium tracking-tight mb-6 p-3 text-brand-gradient">
+    <div className="flex flex-col items-center justify-center mt-20 mb-10">
+      <h1 className="text-xl text-center font-medium tracking-tight mb-6 p-3 text-brand-gradient">
         Trusted by students and professionals at
       </h1>
 

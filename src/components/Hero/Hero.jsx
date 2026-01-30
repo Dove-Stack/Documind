@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
       </header>
 
-      <div className="relative max-w-5xl mx-auto mt-13 py-15">
+      <div className="relative max-w-5xl mx-auto py-15">
         <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
           <div className="bg-white border-b border-gray-50 px-4 py-3 flex gap-2">
             <div className="w-3 h-3 rounded-full bg-red-400"></div>

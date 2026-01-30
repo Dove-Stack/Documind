@@ -1,0 +1,174 @@
+      <main className="max-w-5xl mx-auto px-4 pb-24">
+        {/* Upload Card */}
+        <div className="bg-white rounded-3xl shadow-soft p-2 mb-12 border border-gray-100">
+          <div className="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center transition-all hover:border-primary/40 group">
+            <input
+              type="file"
+              id="file-upload"
+              className="hidden"
+              onChange={handleFileUpload}
+              accept=".pdf,.docx,.txt"
+            />
+            <label htmlFor="file-upload" className="cursor-pointer">
+              <div className="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <CloudArrowUpIcon className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">
+                Drop your document here
+              </h3>
+              <p className="text-slate-400 mb-6">
+                or click to browse from your computer
+              </p>
+              <div className="bg-primary text-white px-8 py-3 rounded-xl font-bold inline-flex items-center gap-2">
+                Choose File
+              </div>
+            </label>
+            <p className="mt-4 text-xs text-slate-400">
+              Supports PDF, Word, TXT (Max 10MB)
+            </p>
+          </div>
+        </div>
+
+        {/* Chat Interface */}
+        <div className="grid grid-cols-1 gap-8">
+          <div className="bg-white rounded-3xl shadow-soft border border-gray-100 overflow-hidden">
+            <div className="p-6 border-b border-gray-50 bg-slate-50/50 flex justify-between items-center">
+              <div className="flex items-center gap-3">
+                <ChatBubbleBottomCenterTextIcon className="w-6 h-6 text-primary" />
+                <h2 className="font-bold text-lg">Interactive Analysis</h2>
+              </div>
+              {uploadedFileName && (
+                <div className="flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-bold">
+                  <CheckCircleIcon className="w-4 h-4" />
+                  {uploadedFileName}
+                </div>
+              )}
+            </div>
+
+            <div className="p-8 min-h-[400px]">
+              {/* Messages Container */}
+              <div className="space-y-6 mb-8">
+                {responses.map((res, i) => (
+                  <div
+                    key={i}
+                    className="animate-in fade-in slide-in-from-bottom-2"
+                  >
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+                        <span className="text-xs font-bold">U</span>
+                      </div>
+                      <div className="bg-slate-50 px-4 py-3 rounded-2xl rounded-tl-none text-slate-700 max-w-[80%]">
+                        {res.question}
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4 flex-row-reverse">
+                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 shadow-lg shadow-indigo-200">
+                        <SparklesIcon className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="bg-primary text-white px-5 py-4 rounded-3xl rounded-tr-none max-w-[85%] leading-relaxed shadow-soft">
+                        {res.answer}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                <div ref={responseContainerRef} />
+              </div>
+
+              {/* Input Area */}
+              <form
+                onSubmit={handleGenerateResponse}
+                className="relative mt-auto"
+              >
+                <input
+                  type="text"
+                  value={userQuestion}
+                  onChange={(e) => setUserQuestion(e.target.value)}
+                  placeholder={
+                    uploadedFileName
+                      ? "Ask DocuMind anything..."
+                      : "Please upload a document first"
+                  }
+                  disabled={!uploadedFileName || isLoading}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 pr-16 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all disabled:opacity-50"
+                />
+                <button
+                  type="submit"
+                  disabled={
+                    !uploadedFileName || isLoading || !userQuestion.trim()
+                  }
+                  className="absolute right-2 top-2 bottom-2 bg-primary text-white p-2.5 rounded-xl hover:scale-105 transition-transform disabled:opacity-0"
+                >
+                  <ArrowRightIcon className="w-6 h-6" />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer Branding */}
+      <footer className="py-12 text-center text-slate-400 text-sm">
+        <p>© 2026 DocuMind AI. Research made simple.</p>
+      </footer>
+
+
+
+
+
+
+
+      {/* Interface Mockup Area */}
+        <div className="relative max-w-5xl mx-auto mt-16">
+            
+          {/* Decorative Blobs (Background) */}
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-indigo-100 rounded-full blur-3xl opacity-60 animate-float"></div>
+          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-purple-100 rounded-full blur-3xl opacity-60 animate-float delay-2000"></div>
+          
+          {/* Large Soft Background Container */}
+          <div className="bg-gradient-to-b from-indigo-50/80 to-purple-50/50 rounded-3xl p-6 sm:p-10 shadow-sm border border-white/50 relative z-10">
+              
+            {/* The "Window" Card */}
+            <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+                
+              {/* Window Controls */}
+              <div className="bg-white border-b border-gray-50 px-4 py-3 flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                <div className="w-3 h-3 rounded-full bg-green-400"></div>
+              </div>
+
+              {/* Chat Interface Body */}
+              <div className="bg-slate-50/50 p-6 sm:p-10 min-h-[300px] flex flex-col justify-center gap-6">
+                  
+                {/* User Query */}
+                <div className="flex items-center gap-4">
+                  {/* User Avatar */}
+                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                      <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  {/* Input Bubble */}
+                  <div className="bg-slate-50 border border-gray-100 shadow-sm text-slate-600 px-4 py-4 rounded-lg w-full text-sm sm:text-base">
+                    Can you summarize the key findings from this research paper?
+                  </div>
+                </div>
+
+                {/* AI Response */}
+                <div className="flex items-start gap-4">
+                    {/* Response Bubble */}
+                  <div className="bg-indigo-600 text-white shadow-md px-4 py-4 rounded-lg w-full text-sm sm:text-base leading-relaxed">
+                    Based on the document, here are the 5 key findings: 1. AI adoption increased by 47% in 2024...
+                  </div>
+                    {/* Bot Avatar */}
+                    <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600 order-last">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                      <path fillRule="evenodd" d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813a3.75 3.75 0 002.576-2.576l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>

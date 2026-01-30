@@ -10,6 +10,15 @@
   --color-slate-text: #3a3541ab;
   --color-mockup-bg: #d9d9d9;
   --color-mockup-user: #eff6ff;
+  --color-feature-upload: #4f46e5;
+  --color-hr-color: #e5e5e5;
+  --color-feature-cloud: #4F46E5;
+  --color-feature-chat: #9333e8;
+  --color-feature-bolt: #db2777;
+  --color-feature-brain: #0891b2;
+  --color-feature-time: #ea580c;
+  --color-feature-shield: #16a34a;
+
   --bg-brand-gradient: linear-gradient(
     to right,
     var(--color-brand-navy),
@@ -35,7 +44,7 @@
     background: linear-gradient(to right, #0f1359, #2029bf);
   }
 
-  .color{
+  .color {
     color: #3a3541ab;
   }
 

@@ -110,12 +110,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen  text-slate-900">
+    <div className="flex flex-col min-h-screen  bg-page-gradient">
       <Navbar />
 
       <Hero />
 
       <TrustedBy />
+      <hr className="my-16 border-none h-px bg-hr-color" />
 
       <Feature />
     </div>
